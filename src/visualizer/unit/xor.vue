@@ -21,9 +21,10 @@ const rollover_dia = "50px"; // The diameter when the user mouses over
 .xor-gate {
     width: v-bind(diameter);
     height: v-bind(diameter);
-    border: 5px solid black;
+    border: 1px solid black;
     border-radius: 100%;
     transform-origin: center;
+    background-color: white;
 }
 
 .xor-gate:hover {

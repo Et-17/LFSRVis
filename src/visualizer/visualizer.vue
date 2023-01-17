@@ -1,11 +1,9 @@
 <script setup>
-import cell from './unit/cell.vue'
-import xor from './unit/xor.vue'
+import unit from './unit/unit.vue'
 </script>
 
 <template>
-    <cell :index="1" />
-    <xor />
+    <unit :index="1" />
 </template>
 
 <style scoped>

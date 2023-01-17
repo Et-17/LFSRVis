@@ -2,6 +2,8 @@
 import { ref, watch } from 'vue'
 defineProps({
     index: Number,
+    size: String,
+    border: String,
 })
 
 const state = ref(false);
@@ -11,7 +13,6 @@ function toggle() {
     state.value = !state.value;
 }
 
-const cellsize = "50px";
 const fontsize = "40px";
 </script>
 
@@ -23,13 +24,15 @@ const fontsize = "40px";
 
 <style scoped>
 .cell {
-    width: v-bind(cellsize);
-    height: v-bind(cellsize);
-    line-height: v-bind(cellsize);
+    width: calc(v-bind(size) - calc(v-bind(border) * 2));
+    height: calc(v-bind(size) - calc(v-bind(border) * 2));
+    line-height: calc(v-bind(size) - calc(v-bind(border) * 2));
     font-size: v-bind(fontsize);
     font-family: monospace;
     text-align: center;
-    border: 5px solid black;
+    border: v-bind(border);
+    border-style: solid;
+    border-color: black;
     color: black;
 }
 
